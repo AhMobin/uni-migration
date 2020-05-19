@@ -27,6 +27,16 @@ class FrontendController extends Controller
         return view('admission.basic_info');
     }
 
+    public function BasicInfoEdit(){
+        $ssc = SSC::where('user_id',Auth::id())->first();
+        $hsc = HSC::where('user_id',Auth::id())->first();
+        return view('admission.info_update',compact('ssc','hsc'));
+    }
+
+    public function Applied(){
+        return view('admission.applied');
+    }
+
     public function storeInfos(Request $request){
         $validatedData = $request->validate([
             'ssc_roll' => 'required|unique:sscs',
@@ -71,6 +81,38 @@ class FrontendController extends Controller
         return Redirect()->back()->with($notification);
 
     }
+
+
+    public function BasicInfoUpdate(Request $request, $id){
+        $ssc = array();
+        $ssc['ssc_roll'] = $request->ssc_roll;
+        $ssc['ssc_board'] = $request->ssc_board;
+        $ssc['ssc_group'] = $request->ssc_group;
+        $ssc['ssc_result'] = $request->ssc_result;
+        $ssc['ssc_year'] = $request->ssc_year;
+
+        Ssc::where('user_id',$id)->update($ssc);
+
+
+        $hsc = array();
+        $hsc['hsc_roll'] = $request->hsc_roll;
+        $hsc['hsc_registration'] = $request->hsc_registration;
+        $hsc['hsc_board'] = $request->hsc_board;
+        $hsc['hsc_group'] = $request->hsc_group;
+        $hsc['hsc_result'] = $request->hsc_result;
+        $hsc['hsc_year'] = $request->hsc_year;
+
+        Hsc::where('user_id',$id)->update($hsc);
+
+        $notification = array(
+            'messege' => 'Information Update Successful',
+            'alert-type' => 'success'
+        );
+
+        return Redirect()->back()->with($notification);
+    }
+
+
 
     public function AdmissionForm(){
 
@@ -120,11 +162,9 @@ class FrontendController extends Controller
             'user_id' => Auth::id(),
             'uni_choice_id' => $choice,
             'payment_id' => $pay,
+            'status' => 2
         ]);
 
-        User::update([
-           'status' => 2
-        ]);
 
         $notification = array(
             'messege' => 'We Will Confirm As Soon As Possible',

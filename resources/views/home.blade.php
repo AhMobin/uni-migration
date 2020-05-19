@@ -10,7 +10,16 @@
 
                     <div class="row">
                         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            @php
+                                $ssc = \App\Ssc::where('user_id',Auth::id())->first();
+                                $hsc = \App\Hsc::where('user_id',Auth::id())->first();
+                            @endphp
+
+                            @if($ssc && $hsc == null)
                             <a href="{{ route('basic.infos') }}">
+                            @else
+                            <a href="{{ route('basicinfo.update') }}">
+                            @endif
                                 <div class="tile-stats">
                                     <div class="icon"><i class="fa fa-user"></i>
                                     </div>

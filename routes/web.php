@@ -71,6 +71,8 @@ Route::get('/','Frontend\PageController@Index')->name('page.index');
 //student basic information
 //show form
 Route::get('student/basic/information','Frontend\FrontendController@BasicInfo')->name('basic.infos');
+Route::get('student/information','Frontend\FrontendController@BasicInfoEdit')->name('basicinfo.update');
+Route::post('info/update/{id}','Frontend\FrontendController@BasicInfoUpdate');
 //store information
 Route::post('information/stored','Frontend\FrontendController@storeInfos')->name('student.basic.info');
 
@@ -79,7 +81,7 @@ Route::get('university/admission/apply','Frontend\FrontendController@AdmissionFo
 //all university access
 Route::post('alluniversity','Frontend\FrontendController@AdmissionAllAccess')->name('admission.store');
 //Route::post('alluniversity','Frontend\FrontendController@AdmissionAllAccess')->name('admission.alluni');
-
+Route::get('applied/form','Frontend\FrontendController@Applied')->name('applied');
 //admit card
 Route::get('student/admit-card','Frontend\PDFController@ShowData')->name('admit.card');
 Route::get('show/pdf/{id}','Frontend\PDFController@previewPDF');

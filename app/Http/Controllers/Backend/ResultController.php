@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Result;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Rap2hpoutre\FastExcel\FastExcel;
 
 class ResultController extends Controller
@@ -15,7 +16,12 @@ class ResultController extends Controller
     }
 
     public function showForm(){
-        return view('admin.result.upload');
+        $showResults = DB::table('results')->join('users','results.user_id','users.id')
+                        ->join('universities','results.university_id','universities.id')
+                        ->join('hscs','results.user_id','hscs.user_id')
+                        ->select('results.*','users.full_name','hscs.hsc_roll','universities.university_name')
+                        ->get();
+        return view('admin.result.upload',compact('showResults'));
     }
 
 

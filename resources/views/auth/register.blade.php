@@ -42,16 +42,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="studentHSCRoll">HSC Roll Number</label>
-                        <input type="number" name="hsc_roll" class="form-control @error('hsc_roll') is-invalid @enderror" required autocomplete="hsc_roll" autofocus>
-                        @error('hsc_roll')
-                        <span class="invalid-feedback" role="alert">
-                                <strong style="color: red">{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                         @error('password')

@@ -72,14 +72,21 @@
                             @elseif($check == false && $applied == true)
                                 <li><a><i class="fa fa-edit"></i> Admission <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="{{ route('basic.infos') }}">Basic Info</a></li>
+                                        <li><a href="{{ route('applied') }}">Applied</a></li>
                                     </ul>
                                 </li>
                             @else
                                 <li><a><i class="fa fa-edit"></i> Admission <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="{{ route('basic.infos') }}">Basic Info</a></li>
-                                        <li><a href="{{ route('apply.admission') }}">Apply Admission</a></li>
+                                        @php
+                                            $checkHSC = DB::table('hscs')->where('user_id',Auth::id())->first();
+                                        @endphp
+                                        @if(!$checkHSC)
+                                            <li><a href="{{ route('basic.infos') }}">Basic Info</a></li>
+                                        @else
+                                            <li><a href="{{ route('basicinfo.update') }}">Basic Info</a></li>
+                                            <li><a href="{{ route('apply.admission') }}">Apply Admission</a></li>
+                                        @endif
                                     </ul>
                                 </li>
                             @endif
