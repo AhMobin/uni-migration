@@ -49,6 +49,11 @@ Route::get('details/pending/applicant/{id}','Backend\ApplicantsController@Detail
 //sending confirm email
 Route::get('approve/pending/applicant/{user_id}','Backend\ApplicantsController@MailSend');
 
+
+//upload result
+Route::get('upload/students/result','Backend\ResultController@showForm')->name('upload.result');
+Route::post('import/result','Backend\ResultController@ImportResult')->name('import.result');
+
 /*******
  * Frontend Routes
  * **************************

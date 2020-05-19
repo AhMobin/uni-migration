@@ -82,6 +82,11 @@
                                     <li><a href="{{ route('all.universities') }}">Universities</a></li>
                                 </ul>
                             </li>
+                            <li><a><i class="fa fa-university"></i> Result <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="{{ route('upload.result') }}">Upload Result</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
 
