@@ -54,6 +54,9 @@ Route::get('approve/pending/applicant/{user_id}','Backend\ApplicantsController@M
 Route::get('upload/students/result','Backend\ResultController@showForm')->name('upload.result');
 Route::post('import/result','Backend\ResultController@ImportResult')->name('import.result');
 
+//university total seat filled up
+Route::get('seat','Backend\ResultnMigrationController@Seat');
+
 /*******
  * Frontend Routes
  * **************************

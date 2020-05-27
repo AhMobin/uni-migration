@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="242250b5-d079-4688-ba93-77dc2f8287c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admission/applied.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admission/info_update.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/result/uni_seat.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/result/upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/result/upload.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admission/basic_info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admission/basic_info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,6 +174,10 @@
       <workItem from="1589284063312" duration="597000" />
       <workItem from="1589898150345" duration="9163000" />
       <workItem from="1589913593920" duration="58000" />
+      <workItem from="1590315254077" duration="2178000" />
+      <workItem from="1590580308105" duration="605000" />
+      <workItem from="1590592881899" duration="3721000" />
+      <workItem from="1590605519701" duration="1493000" />
     </task>
     <servers />
   </component>
