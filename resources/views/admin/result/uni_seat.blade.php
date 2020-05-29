@@ -173,263 +173,323 @@
                                     <tr>
                                         <th>#ID</th>
                                         <th>University Name</th>
+                                        <th>Seat Filled</th>
                                         <th>Total Seat</th>
                                     </tr>
                                 </thead>
 
 
                                 <tbody>
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $name1->id }}</td>--}}
-{{--                                        <td>{{ $name1->university_name }}</td>--}}
-{{--                                        <td>{{ $id1 }}</td>--}}
-{{--                                    </tr>--}}
+                                    <tr>
+                                        <td>{{ $name1->id }}</td>
+                                        <td>{{ $name1->university_name }}</td>
+                                        <td>{{ $id1 }}</td>
+                                        <td>{{ $name1->uni_seat }}</td>
+                                    </tr>
                                     <tr>
                                         <td>{{ $name2->id }}</td>
                                         <td>{{ $name2->university_name }}</td>
                                         <td>{{ $id2 }}</td>
+                                        <td>{{ $name2->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name3->id }}</td>
                                         <td>{{ $name3->university_name }}</td>
                                         <td>{{ $id3}}</td>
+                                        <td>{{ $name3->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name4->id }}</td>
                                         <td>{{ $name4->university_name }}</td>
                                         <td>{{ $id4 }}</td>
+                                        <td>{{ $name4->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name5->id }}</td>
                                         <td>{{ $name5->university_name }}</td>
                                         <td>{{ $id5 }}</td>
+                                        <td>{{ $name5->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name6->id }}</td>
                                         <td>{{ $name6->university_name }}</td>
                                         <td>{{ $id6 }}</td>
+                                        <td>{{ $name6->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name7->id }}</td>
                                         <td>{{ $name7->university_name }}</td>
                                         <td>{{ $id7 }}</td>
+                                        <td>{{ $name7->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name8->id }}</td>
                                         <td>{{ $name8->university_name }}</td>
                                         <td>{{ $id8 }}</td>
+                                        <td>{{ $name8->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name9->id }}</td>
                                         <td>{{ $name9->university_name }}</td>
                                         <td>{{ $id9 }}</td>
+                                        <td>{{ $name9->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name10->id }}</td>
                                         <td>{{ $name10->university_name }}</td>
                                         <td>{{ $id10 }}</td>
+                                        <td>{{ $name10->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name11->id }}</td>
                                         <td>{{ $name11->university_name }}</td>
                                         <td>{{ $id11 }}</td>
+                                        <td>{{ $name11->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name12->id }}</td>
                                         <td>{{ $name12->university_name }}</td>
                                         <td>{{ $id12 }}</td>
+                                        <td>{{ $name12->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name13->id }}</td>
                                         <td>{{ $name13->university_name }}</td>
                                         <td>{{ $id13 }}</td>
+                                        <td>{{ $name13->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name14->id }}</td>
                                         <td>{{ $name14->university_name }}</td>
                                         <td>{{ $id14 }}</td>
+                                        <td>{{ $name14->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name15->id }}</td>
                                         <td>{{ $name15->university_name }}</td>
                                         <td>{{ $id15 }}</td>
+                                        <td>{{ $name15->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name16->id }}</td>
                                         <td>{{ $name16->university_name }}</td>
                                         <td>{{ $id16 }}</td>
+                                        <td>{{ $name16->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name17->id }}</td>
                                         <td>{{ $name17->university_name }}</td>
                                         <td>{{ $id17 }}</td>
+                                        <td>{{ $name17->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name18->id }}</td>
                                         <td>{{ $name18->university_name }}</td>
                                         <td>{{ $id18 }}</td>
+                                        <td>{{ $name18->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name19->id }}</td>
                                         <td>{{ $name19->university_name }}</td>
                                         <td>{{ $id19 }}</td>
+                                        <td>{{ $name19->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name20->id }}</td>
                                         <td>{{ $name20->university_name }}</td>
                                         <td>{{ $id20 }}</td>
+                                        <td>{{ $name20->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name21->id }}</td>
                                         <td>{{ $name21->university_name }}</td>
                                         <td>{{ $id21 }}</td>
+                                        <td>{{ $name21->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name22->id }}</td>
                                         <td>{{ $name22->university_name }}</td>
                                         <td>{{ $id22 }}</td>
+                                        <td>{{ $name22->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name23->id }}</td>
                                         <td>{{ $name23->university_name }}</td>
                                         <td>{{ $id23}}</td>
+                                        <td>{{ $name23->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name24->id }}</td>
                                         <td>{{ $name24->university_name }}</td>
                                         <td>{{ $id24 }}</td>
+                                        <td>{{ $name24->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name25->id }}</td>
                                         <td>{{ $name25->university_name }}</td>
                                         <td>{{ $id25 }}</td>
+                                        <td>{{ $name25->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name26->id }}</td>
                                         <td>{{ $name26->university_name }}</td>
                                         <td>{{ $id26 }}</td>
+                                        <td>{{ $name26->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name27->id }}</td>
                                         <td>{{ $name27->university_name }}</td>
                                         <td>{{ $id27 }}</td>
+                                        <td>{{ $name27->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name28->id }}</td>
                                         <td>{{ $name28->university_name }}</td>
                                         <td>{{ $id28 }}</td>
+                                        <td>{{ $name28->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name29->id }}</td>
                                         <td>{{ $name29->university_name }}</td>
                                         <td>{{ $id29 }}</td>
+                                        <td>{{ $name29->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name30->id }}</td>
                                         <td>{{ $name30->university_name }}</td>
                                         <td>{{ $id30 }}</td>
+                                        <td>{{ $name30->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name31->id }}</td>
                                         <td>{{ $name31->university_name }}</td>
                                         <td>{{ $id31 }}</td>
+                                        <td>{{ $name31->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name32->id }}</td>
                                         <td>{{ $name32->university_name }}</td>
                                         <td>{{ $id32 }}</td>
+                                        <td>{{ $name32->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name33->id }}</td>
                                         <td>{{ $name33->university_name }}</td>
                                         <td>{{ $id33 }}</td>
+                                        <td>{{ $name33->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name34->id }}</td>
                                         <td>{{ $name34->university_name }}</td>
                                         <td>{{ $id34 }}</td>
+                                        <td>{{ $name34->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name35->id }}</td>
                                         <td>{{ $name35->university_name }}</td>
                                         <td>{{ $id35 }}</td>
+                                        <td>{{ $name35->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name36->id }}</td>
                                         <td>{{ $name36->university_name }}</td>
                                         <td>{{ $id36 }}</td>
+                                        <td>{{ $name36->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name37->id }}</td>
                                         <td>{{ $name37->university_name }}</td>
                                         <td>{{ $id37 }}</td>
+                                        <td>{{ $name37->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name38->id }}</td>
                                         <td>{{ $name38->university_name }}</td>
                                         <td>{{ $id38 }}</td>
+                                        <td>{{ $name38->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name39->id }}</td>
                                         <td>{{ $name39->university_name }}</td>
                                         <td>{{ $id39 }}</td>
+                                        <td>{{ $name39->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name40->id }}</td>
                                         <td>{{ $name40->university_name }}</td>
                                         <td>{{ $id40 }}</td>
+                                        <td>{{ $name40->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name41->id }}</td>
                                         <td>{{ $name41->university_name }}</td>
                                         <td>{{ $id41 }}</td>
+                                        <td>{{ $name41->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name42->id }}</td>
                                         <td>{{ $name42->university_name }}</td>
                                         <td>{{ $id42 }}</td>
+                                        <td>{{ $name42->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name43->id }}</td>
                                         <td>{{ $name43->university_name }}</td>
                                         <td>{{ $id43 }}</td>
+                                        <td>{{ $name5->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name44->id }}</td>
                                         <td>{{ $name44->university_name }}</td>
                                         <td>{{ $id44 }}</td>
+                                        <td>{{ $name44->uni_seat }}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ $name45->id }}</td>
                                         <td>{{ $name45->university_name }}</td>
                                         <td>{{ $id45 }}</td>
+                                        <td>{{ $name45->uni_seat }}</td>
                                     </tr>
+                                    @if($name46)
                                     <tr>
                                         <td>{{ $name46->id }}</td>
                                         <td>{{ $name46->university_name }}</td>
                                         <td>{{ $id46 }}</td>
+                                        <td>{{ $name46->uni_seat }}</td>
                                     </tr>
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $name47->id }}</td>--}}
-{{--                                        <td>{{ $name47->university_name }}</td>--}}
-{{--                                        <td>{{ $id47 }}</td>--}}
-{{--                                    </tr>--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $name48->id }}</td>--}}
-{{--                                        <td>{{ $name48->university_name }}</td>--}}
-{{--                                        <td>{{ $id48 }}</td>--}}
-{{--                                    </tr>--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $name49->id }}</td>--}}
-{{--                                        <td>{{ $name49->university_name }}</td>--}}
-{{--                                        <td>{{ $id49 }}</td>--}}
-{{--                                    </tr>--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $name50->id }}</td>--}}
-{{--                                        <td>{{ $name50->university_name }}</td>--}}
-{{--                                        <td>{{ $id50 }}</td>--}}
-{{--                                    </tr>--}}
-
+                                    @endif
+                                    @if($name47)
+                                    <tr>
+                                        <td>{{ $name47->id }}</td>
+                                        <td>{{ $name47->university_name }}</td>
+                                        <td>{{ $id47 }}</td>
+                                        <td>{{ $name47->uni_seat }}</td>
+                                    </tr>
+                                    @endif
+                                    @if($name48)
+                                    <tr>
+                                        <td>{{ $name48->id }}</td>
+                                        <td>{{ $name48->university_name }}</td>
+                                        <td>{{ $id48 }}</td>
+                                        <td>{{ $name48->uni_seat }}</td>
+                                    </tr>
+                                    @endif
+                                    @if($name49)
+                                    <tr>
+                                        <td>{{ $name49->id }}</td>
+                                        <td>{{ $name49->university_name }}</td>
+                                        <td>{{ $id49 }}</td>
+                                        <td>{{ $name49->uni_seat }}</td>
+                                    </tr>
+                                    @endif
+                                    @if($name50)
+                                    <tr>
+                                        <td>{{ $name50->id }}</td>
+                                        <td>{{ $name50->university_name }}</td>
+                                        <td>{{ $id50 }}</td>
+                                        <td>{{ $name50->uni_seat }}</td>
+                                    </tr>
+                                    @endif
                                 </tbody>
 
 

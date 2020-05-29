@@ -90,28 +90,12 @@
                                     </ul>
                                 </li>
                             @endif
-                            <li><a><i class="fa fa-table"></i> University Categories <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-table"></i> Migration <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="#">All Categories</a></li>
-                                    <li><a href="#">Edit Details</a></li>
+                                    <li><a href="{{ route('uni.migrate') }}">Uni Migration</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-university"></i> University <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Universities</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-briefcase"></i>Services <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Services</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Fixed Sidebar</a></li>
-                                    <li><a href="#">Fixed Footer</a></li>
-                                </ul>
-                            </li>
+
                         </ul>
                     </div>
 

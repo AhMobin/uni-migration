@@ -74,7 +74,6 @@
                             <li><a><i class="fa fa-table"></i> University Categories <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="{{ route('uni.categories') }}">All Categories</a></li>
-                                    <li><a href="#">Edit Details</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-university"></i> University <span class="fa fa-chevron-down"></span></a>
@@ -82,9 +81,10 @@
                                     <li><a href="{{ route('all.universities') }}">Universities</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-university"></i> Result <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-mortar-board"></i> Result <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="{{ route('upload.result') }}">Upload Result</a></li>
+                                    <li><a href="{{ route('seat') }}">University Seat</a></li>
                                 </ul>
                             </li>
                         </ul>

@@ -55,7 +55,7 @@ Route::get('upload/students/result','Backend\ResultController@showForm')->name('
 Route::post('import/result','Backend\ResultController@ImportResult')->name('import.result');
 
 //university total seat filled up
-Route::get('seat','Backend\ResultnMigrationController@Seat');
+Route::get('seat','Backend\ResultnMigrationController@Seat')->name('seat');
 
 /*******
  * Frontend Routes
@@ -88,3 +88,6 @@ Route::get('applied/form','Frontend\FrontendController@Applied')->name('applied'
 //admit card
 Route::get('student/admit-card','Frontend\PDFController@ShowData')->name('admit.card');
 Route::get('show/pdf/{id}','Frontend\PDFController@previewPDF');
+
+//university Migration
+Route::get('university/migration','Frontend\FrontendController@applyMigration')->name('uni.migrate');

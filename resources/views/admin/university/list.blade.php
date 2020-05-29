@@ -22,6 +22,7 @@
                         <tr>
                             <th>#ID</th>
                             <th>University Name</th>
+                            <th>Seat Limit</th>
                             <th>University Type</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -32,6 +33,7 @@
                             <tr>
                                 <th>{{ $uni->id }}</th>
                                 <td>{{ $uni->university_name }}</td>
+                                <td>{{ $uni->uni_seat }}</td>
                                 <td>{{ $uni->category_name }}</td>
                                 <td>
                                     @if($uni->status == 1)

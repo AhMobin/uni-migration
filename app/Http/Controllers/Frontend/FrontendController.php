@@ -11,7 +11,7 @@ use App\University;
 use App\UniversityChoice;
 use App\User;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use PHPUnit\Framework\StaticAnalysis\HappyPath\AssertNotInstanceOf\A;
@@ -173,6 +173,21 @@ class FrontendController extends Controller
 
         return Redirect()->back()->with($notification);
 
+    }
+
+
+
+    public function applyMigration(){
+        $result = DB::table('results')
+                ->join('users','results.user_roll','users.hsc_roll')
+                ->join('universities','results.university_id','universities.id')
+                ->select('results.*','users.full_name','users.hsc_roll','universities.university_name')
+                ->where('results.user_roll',Auth::user()->hsc_roll)
+                ->first();
+
+        $allUni = University::all();
+
+        return view('admission.apply_migrate',compact('allUni','result'));
     }
 
 }

@@ -16,10 +16,10 @@ class ResultController extends Controller
     }
 
     public function showForm(){
-        $showResults = DB::table('results')->join('users','results.user_id','users.id')
+        $showResults = DB::table('results')
+                        ->join('users','results.user_roll','users.hsc_roll')
                         ->join('universities','results.university_id','universities.id')
-                        ->join('hscs','results.user_id','hscs.user_id')
-                        ->select('results.*','users.full_name','hscs.hsc_roll','universities.university_name')
+                        ->select('results.*','users.full_name','users.hsc_roll','universities.university_name')
                         ->get();
         return view('admin.result.upload',compact('showResults'));
     }
@@ -36,7 +36,7 @@ class ResultController extends Controller
 
         $result = (new FastExcel)->import($path, function ($line) {
             Result::create([
-                'user_id' => $line['user_id'],
+                'user_roll' => $line['user_roll'],
                 'university_id' => $line['university_id'],
             ]);
         });
