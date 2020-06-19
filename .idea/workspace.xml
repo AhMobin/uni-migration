@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="242250b5-d079-4688-ba93-77dc2f8287c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admission/apply_migrate.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/result/migrate_request.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/result/migration_details.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultnMigrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultnMigrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/admin_layouts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_layouts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/result/uni_seat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/result/uni_seat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/university/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/university/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admission/apply_migrate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admission/apply_migrate.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +188,13 @@
       <workItem from="1590605519701" duration="1561000" />
       <workItem from="1590695051708" duration="758000" />
       <workItem from="1590763925426" duration="6026000" />
+      <workItem from="1590851351985" duration="218000" />
+      <workItem from="1591257881663" duration="1708000" />
+      <workItem from="1591366661046" duration="3651000" />
+      <workItem from="1591632235728" duration="3069000" />
+      <workItem from="1591723274725" duration="217000" />
+      <workItem from="1591810459783" duration="277000" />
+      <workItem from="1592565179275" duration="10124000" />
     </task>
     <servers />
   </component>

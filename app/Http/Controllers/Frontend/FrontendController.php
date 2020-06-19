@@ -7,6 +7,7 @@ use App\Hsc;
 use App\Http\Controllers\Controller;
 use App\Payment;
 use App\Ssc;
+use App\UniMigrate;
 use App\University;
 use App\UniversityChoice;
 use App\User;
@@ -79,7 +80,6 @@ class FrontendController extends Controller
         );
 
         return Redirect()->back()->with($notification);
-
     }
 
 
@@ -92,7 +92,6 @@ class FrontendController extends Controller
         $ssc['ssc_year'] = $request->ssc_year;
 
         Ssc::where('user_id',$id)->update($ssc);
-
 
         $hsc = array();
         $hsc['hsc_roll'] = $request->hsc_roll;
@@ -113,9 +112,7 @@ class FrontendController extends Controller
     }
 
 
-
     public function AdmissionForm(){
-
         $ssc = Ssc::select('ssc_result')->where('user_id',Auth::id())->first();
         $hsc = Hsc::select('hsc_group','hsc_result')->where('user_id',Auth::id())->first();
 
@@ -165,29 +162,76 @@ class FrontendController extends Controller
             'status' => 2
         ]);
 
-
         $notification = array(
             'messege' => 'We Will Confirm As Soon As Possible',
             'alert-type' => 'success'
         );
 
         return Redirect()->back()->with($notification);
-
     }
-
 
 
     public function applyMigration(){
         $result = DB::table('results')
                 ->join('users','results.user_roll','users.hsc_roll')
                 ->join('universities','results.university_id','universities.id')
-                ->select('results.*','users.full_name','users.hsc_roll','universities.university_name')
+                ->join('hscs','results.user_roll','hscs.hsc_roll')
+                ->select('results.*','users.full_name','users.hsc_roll','universities.university_name','hscs.hsc_group','hscs.hsc_result')
                 ->where('results.user_roll',Auth::user()->hsc_roll)
                 ->first();
 
-        $allUni = University::all();
+        $migrate = DB::table('uni_migrates')
+                    ->join('universities','uni_migrates.migration_uni','universities.id')
+                    ->select('uni_migrates.*','universities.university_name')
+                    ->where('uni_migrates.result_id',$result->id)
+                    ->first();
 
-        return view('admission.apply_migrate',compact('allUni','result'));
+        $ssc = Ssc::select('ssc_result')->where('user_id',Auth::id())->first();
+        $hsc = Hsc::select('hsc_group','hsc_result')->where('user_id',Auth::id())->first();
+
+        $gpa = $ssc->ssc_result + $hsc->hsc_result;
+        $group = $hsc->hsc_group;
+
+        if($migrate){
+            if($gpa >= 9 && $group=='science'){
+                $allUni = University::select('id','university_name')->where('status',1)->get();
+                return view('admission.apply_migrate',compact('allUni','result','migrate'));
+            }elseif($gpa >= 8 && $result < 9 && $group=='science'){
+                $GenSpeAgr = University::select('id','university_name')->where('unicategory_id','>',2)->get();
+                return view('admission.apply_migrate',compact('GenSpeAgr','result','migrate'));
+            }elseif ($gpa >= 8 && $group=='commerce' || $group=='arts'){
+                $onlyGen = University::select('id','university_name')->where('unicategory_id',4)->get();
+                return view('admission.apply_migrate',compact('onlyGen','result','migrate'));
+            }
+        }else{
+            if($gpa >= 9 && $group=='science'){
+                $allUni = University::select('id','university_name')->where('status',1)->get();
+                return view('admission.apply_migrate',compact('allUni','result'));
+            }elseif($gpa >= 8 && $result < 9 && $group=='science'){
+                $GenSpeAgr = University::select('id','university_name')->where('unicategory_id','>',2)->get();
+                return view('admission.apply_migrate',compact('GenSpeAgr','result'));
+            }elseif ($gpa >= 8 && $group=='commerce' || $group=='arts'){
+                $onlyGen = University::select('id','university_name')->where('unicategory_id',4)->get();
+                return view('admission.apply_migrate',compact('onlyGen','result'));
+            }
+        }
+    }
+
+
+    public function MigratedApplied(Request $request){
+        UniMigrate::create([
+           'result_id' =>  $request->result_id,
+           'st_roll' =>  $request->st_roll,
+           'migration_uni' =>  $request->migration_uni,
+           'current_uni_id' =>  $request->current_uni_id,
+        ]);
+
+        $notification = array(
+            'messege' => 'Migration Applied. You will get Feedback.',
+            'alert-type' => 'success'
+        );
+
+        return Redirect()->back()->with($notification);
     }
 
 }

@@ -87,6 +87,9 @@
                                     <li><a href="{{ route('seat') }}">University Seat</a></li>
                                 </ul>
                             </li>
+
+                            <li><a href="{{ route('migrations') }}"><i class="fa fa-chain"></i> Migration Request </a></li>
+
                         </ul>
                     </div>
 

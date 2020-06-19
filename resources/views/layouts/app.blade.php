@@ -90,12 +90,13 @@
                                     </ul>
                                 </li>
                             @endif
+                            @if($check)
                             <li><a><i class="fa fa-table"></i> Migration <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="{{ route('uni.migrate') }}">Uni Migration</a></li>
                                 </ul>
                             </li>
-
+                            @endif
                         </ul>
                     </div>
 

@@ -57,6 +57,14 @@ Route::post('import/result','Backend\ResultController@ImportResult')->name('impo
 //university total seat filled up
 Route::get('seat','Backend\ResultnMigrationController@Seat')->name('seat');
 
+Route::get('migration/requests','Backend\ResultnMigrationController@MigrationRequest')->name('migrations');
+
+
+//migration
+//view single students migration details
+Route::get('view/migration/info/{id}','Backend\ResultnMigrationController@MigrationDetails');
+
+
 /*******
  * Frontend Routes
  * **************************
@@ -91,3 +99,4 @@ Route::get('show/pdf/{id}','Frontend\PDFController@previewPDF');
 
 //university Migration
 Route::get('university/migration','Frontend\FrontendController@applyMigration')->name('uni.migrate');
+Route::post('migration/applied/','Frontend\FrontendController@MigratedApplied');
