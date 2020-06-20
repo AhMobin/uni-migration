@@ -1,5 +1,5 @@
 @component('mail::message')
-# Dear Applicant
+Dear Applicant,
 
 Your application request has been confirmed. Please click the button to print admit card.
 
@@ -7,6 +7,6 @@ Your application request has been confirmed. Please click the button to print ad
 Admit Card
 @endcomponent
 
-Thanks,<br>
-{{ config('app.name') }}
+<b>Thanks For Using This App,<br>
+{{ config('app.name') }}</b>
 @endcomponent

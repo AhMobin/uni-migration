@@ -8,6 +8,7 @@ use Barryvdh\DomPDF\PDF;
 use Illuminate\Support\Facades\App;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PDFController extends Controller
 {
@@ -18,11 +19,12 @@ class PDFController extends Controller
 
     public function ShowData(){
         $data = $this->get_user_data();
+
         return view('admission.admit-card',compact('data'));
     }
 
     public function get_user_data(){
-        $get_data = User::select('id', 'full_name', 'email_address')->where('id',Auth::user()->id)->first();
+        $get_data = User::where('id',Auth::user()->id)->first();
         return $get_data;
     }
 
@@ -35,32 +37,24 @@ class PDFController extends Controller
     function convert_into_html()
     {
         $users_data = $this->get_user_data();
-//        $output = '
-//     <h3 align="center">User Data</h3>
-//     <table width="100%" style="border-collapse: collapse; border: 0px;">
-//      <tr>
-//    <th style="border: 1px solid; padding:12px;" width="20%">ID</th>
-//    <th style="border: 1px solid; padding:12px;" width="30%">Name</th>
-//    <th style="border: 1px solid; padding:12px;" width="15%">Email</th>
-//   </tr>
-//     ';
-//        foreach($users_data as $user)
-//        {
-//            $output .= '
-//      <tr>
-//       <td style="border: 1px solid; padding:12px;">'.$user->id.'</td>
-//       <td style="border: 1px solid; padding:12px;">'.$user->full_name.'</td>
-//       <td style="border: 1px solid; padding:12px;">'.$user->email_address.'</td>
-//      </tr>
-//      ';
-//        }
-//        $output .= '</table>';
+        $hsc = DB::table('hscs')->where('hsc_roll',$users_data->hsc_roll)->first();
 
 
-        $output = '<h3 style="text-align: center">Public University Admission Exam</h3>
-//                   <p>Student Name:'.$users_data->full_name.'</p>';
+
+
+        $output = '<h3 style="text-align: center">Public University Admission Exam<br><span style="text-align: center">Admit Card</span></h3><hr><br>
+                   <p><b>Student Name:</b> '.$users_data->full_name.'</p>'.
+                   '<p><b>HSC Roll:</b> '.$hsc->hsc_roll.'</p>'.
+                   '<p><b>Registration Num:</b> '.$hsc->hsc_registration.'</p>'
+
+
+
+
+
 
         ;
+
+
 
 
 

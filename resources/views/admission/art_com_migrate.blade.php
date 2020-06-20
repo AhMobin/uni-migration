@@ -26,33 +26,32 @@
                             </td>
                         </tr>
 
-                            <tr>
-                                <td><h5>University Name</h5></td>
-                                <td>
-                                    {{ $result->university_name }}
-                                </td>
+                        <tr>
+                            <td><h5>University Name</h5></td>
+                            <td>
+                                {{ $result->university_name }}
+                            </td>
 
-                            </tr>
+                        </tr>
 
-                            <tr>
-                                <td><h5>To Migrate</h5></td>
-                                <td>
-                                    <select name="migration_uni" class="form-control">
-                                        @if($allUni)
-                                            @foreach($allUni as $uni)
-                                                <option value="{{ $uni->id }}">{{ $uni->university_name }}</option>
-                                            @endforeach
-                                        @endif
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><h5>Apply</h5></td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary"> <i class="fa fa-thumbs-up"></i> </button>
-                                </td>
-                            </tr>
-
+                        <tr>
+                            <td><h5>To Migrate</h5></td>
+                            <td>
+                                <select name="migration_uni" class="form-control">
+                                    @if($onlyGen)
+                                        @foreach($onlyGen as $uni)
+                                            <option value="{{ $uni->id }}">{{ $uni->university_name }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h5>Apply</h5></td>
+                            <td>
+                                <button type="submit" class="btn btn-primary"> <i class="fa fa-thumbs-up"></i> </button>
+                            </td>
+                        </tr>
                     </form>
 
                 </table>

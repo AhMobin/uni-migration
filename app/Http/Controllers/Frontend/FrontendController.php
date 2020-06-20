@@ -195,24 +195,24 @@ class FrontendController extends Controller
         if($migrate){
             if($gpa >= 9 && $group=='science'){
                 $allUni = University::select('id','university_name')->where('status',1)->get();
-                return view('admission.apply_migrate',compact('allUni','result','migrate'));
-            }elseif($gpa >= 8 && $result < 9 && $group=='science'){
+                return view('admission.after_migrate',compact('allUni','result','migrate'));
+            }elseif($gpa >= 8 && $gpa < 9 && $group=='science'){
                 $GenSpeAgr = University::select('id','university_name')->where('unicategory_id','>',2)->get();
-                return view('admission.apply_migrate',compact('GenSpeAgr','result','migrate'));
+                return view('admission.after_migrate_nine',compact('GenSpeAgr','result','migrate'));
             }elseif ($gpa >= 8 && $group=='commerce' || $group=='arts'){
                 $onlyGen = University::select('id','university_name')->where('unicategory_id',4)->get();
-                return view('admission.apply_migrate',compact('onlyGen','result','migrate'));
+                return view('admission.after_migrate_artcom',compact('onlyGen','result','migrate'));
             }
         }else{
             if($gpa >= 9 && $group=='science'){
                 $allUni = University::select('id','university_name')->where('status',1)->get();
                 return view('admission.apply_migrate',compact('allUni','result'));
-            }elseif($gpa >= 8 && $result < 9 && $group=='science'){
+            }elseif($gpa >= 8 && $gpa < 9 && $group=='science'){
                 $GenSpeAgr = University::select('id','university_name')->where('unicategory_id','>',2)->get();
-                return view('admission.apply_migrate',compact('GenSpeAgr','result'));
+                return view('admission.under_nine',compact('GenSpeAgr','result'));
             }elseif ($gpa >= 8 && $group=='commerce' || $group=='arts'){
                 $onlyGen = University::select('id','university_name')->where('unicategory_id',4)->get();
-                return view('admission.apply_migrate',compact('onlyGen','result'));
+                return view('admission.art_com_migrate',compact('onlyGen','result'));
             }
         }
     }
@@ -231,7 +231,7 @@ class FrontendController extends Controller
             'alert-type' => 'success'
         );
 
-        return Redirect()->back()->with($notification);
+        return Redirect()->to('home')->with($notification);
     }
 
 }

@@ -63,6 +63,10 @@ Route::get('migration/requests','Backend\ResultnMigrationController@MigrationReq
 //migration
 //view single students migration details
 Route::get('view/migration/info/{id}','Backend\ResultnMigrationController@MigrationDetails');
+//approved migration
+Route::get('migration/approved/{id}','Backend\ResultnMigrationController@MigrationApproved');
+//deny migration
+Route::get('migration/deny/{id}','Backend\ResultnMigrationController@MigrationDenied');
 
 
 /*******
@@ -91,7 +95,6 @@ Route::post('information/stored','Frontend\FrontendController@storeInfos')->name
 Route::get('university/admission/apply','Frontend\FrontendController@AdmissionForm')->name('apply.admission');
 //all university access
 Route::post('alluniversity','Frontend\FrontendController@AdmissionAllAccess')->name('admission.store');
-//Route::post('alluniversity','Frontend\FrontendController@AdmissionAllAccess')->name('admission.alluni');
 Route::get('applied/form','Frontend\FrontendController@Applied')->name('applied');
 //admit card
 Route::get('student/admit-card','Frontend\PDFController@ShowData')->name('admit.card');

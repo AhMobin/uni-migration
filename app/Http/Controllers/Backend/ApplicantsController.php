@@ -38,7 +38,7 @@ class ApplicantsController extends Controller
             ->where('admissions.status',1)
             ->get();
 
-//        return response()->json($confirm);
+
         return view('admin.applicants.confirm',compact('confirm'));
     }
 

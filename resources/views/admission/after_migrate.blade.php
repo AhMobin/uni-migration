@@ -25,34 +25,37 @@
                                 {{ $result->full_name }}
                             </td>
                         </tr>
+                        <tr>
+                            <td><h5>University Name</h5></td>
+                            <td>
+                                {{ $result->university_name }}
+                            </td>
+                        </tr>
 
+                        @if($migrate->status==0)
                             <tr>
-                                <td><h5>University Name</h5></td>
+                                <td><h5>Migrate To (Applied)</h5></td>
                                 <td>
-                                    {{ $result->university_name }}
-                                </td>
-
-                            </tr>
-
-                            <tr>
-                                <td><h5>To Migrate</h5></td>
-                                <td>
-                                    <select name="migration_uni" class="form-control">
-                                        @if($allUni)
-                                            @foreach($allUni as $uni)
-                                                <option value="{{ $uni->id }}">{{ $uni->university_name }}</option>
-                                            @endforeach
-                                        @endif
-                                    </select>
+                                    {{ $migrate->university_name }}
                                 </td>
                             </tr>
+                        @elseif($migrate->status==2)
                             <tr>
-                                <td><h5>Apply</h5></td>
+                                <td><h5>University Name<br><span style="color:red">(Migration Denied)</span></h5></td>
                                 <td>
-                                    <button type="submit" class="btn btn-primary"> <i class="fa fa-thumbs-up"></i> </button>
+                                    {{ $migrate->university_name }}
                                 </td>
                             </tr>
 
+                        @elseif($migrate->status==1)
+                            <tr>
+                                <td><h5>Migration (Granted)</h5></td>
+                                <td>
+                                    {{ $migrate->university_name }}
+                                </td>
+                            </tr>
+
+                        @endif
                     </form>
 
                 </table>
