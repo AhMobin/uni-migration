@@ -19,6 +19,7 @@ class CreateUniversitiesTable extends Migration
             $table->string('university_slug');
             $table->bigInteger('unicategory_id')->unsigned()->index();
             $table->string('university_contact')->nullable();
+            $table->mediumInteger('uni_seat')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
 

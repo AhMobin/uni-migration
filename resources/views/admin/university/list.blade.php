@@ -43,12 +43,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></a>
-                                    @if($uni->status == 1)
-                                        <a href="#" class="btn btn-warning" title="Inactive Now"><i class="fa fa-thumbs-down"></i></a>
-                                    @else
-                                        <a href="#" class="btn btn-success" title="Active Now"><i class="fa fa-thumbs-up"></i></a>
-                                    @endif
+                                    <a href="{{ url('edit/university/'.$uni->id) }}" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></a>
                                     <a href="#" class="btn btn-danger" title="Delete" id="delete"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>

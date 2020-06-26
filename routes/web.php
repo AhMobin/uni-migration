@@ -36,6 +36,8 @@ Route::post('category/stored','Backend\UniversityController@StoreCategory')->nam
 
 Route::get('all/university/list','Backend\UniversityController@AllUniversity')->name('all.universities');
 Route::post('university/added','Backend\UniversityController@StoreUniversity')->name('store.university');
+Route::get('edit/university/{id}','Backend\UniversityController@EditUniversity');
+Route::post('update/uni/{id}','Backend\UniversityController@UpdateUniversity');
 
 
 //student admission applications manage

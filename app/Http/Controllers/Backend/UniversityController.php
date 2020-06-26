@@ -68,4 +68,29 @@ class UniversityController extends Controller
 
         return Redirect()->back()->with($notification);
     }
+
+
+    public function EditUniversity($id){
+        $edit = University::with('unicategory')->where('id',$id)->first();
+        $allCat = UniCategory::all();
+        return view('admin.university.edit_uni',compact('edit','allCat'));
+    }
+
+    public function UpdateUniversity(Request $request, $id){
+        $update = University::findorfail($id);
+        $update->university_name = $request->university_name;
+        $update->unicategory_id = $request->unicategory_id;
+        $update->university_contact = $request->university_contact;
+        $update->uni_seat = $request->uni_seat;
+        $update->status = $request->status;
+        $update->save();
+
+        $notification = array(
+            'messege' => 'University Added Successful',
+            'alert-type' => 'success'
+        );
+
+        return Redirect()->back()->with($notification);
+
+    }
 }

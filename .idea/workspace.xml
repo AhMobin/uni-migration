@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="242250b5-d079-4688-ba93-77dc2f8287c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admission/after_migrate.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admission/after_migrate_artcom.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admission/after_migrate_nine.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admission/art_com_migrate.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admission/under_nine.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/university/edit_uni.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ApplicantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ApplicantsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultnMigrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultnMigrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PDFController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/UniMigrate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UniMigrate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admission/admit-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admission/admit-card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admission/apply_migrate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admission/apply_migrate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/UniversityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/UniversityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/University.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/University.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_10_141951_create_universities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_10_141951_create_universities_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/university/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/university/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +190,8 @@
       <workItem from="1591723274725" duration="217000" />
       <workItem from="1591810459783" duration="277000" />
       <workItem from="1592565179275" duration="10185000" />
-      <workItem from="1592679962125" duration="5644000" />
+      <workItem from="1592679962125" duration="6907000" />
+      <workItem from="1593179181886" duration="2614000" />
     </task>
     <servers />
   </component>
