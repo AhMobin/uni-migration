@@ -51,8 +51,13 @@
                         </tbody>
                     </table>
                 </div>
+
+                <a href="{{ route('admin.dashboard') }}" class="btn btn-primary">Back</a>
+
             </div>
+
         </div>
+
     </div>
 
 @endsection

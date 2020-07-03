@@ -49,11 +49,13 @@ class ResultnMigrationController extends Controller
         $viewOld = DB::table('uni_migrates')
                     ->join('universities','uni_migrates.current_uni_id','universities.id')
                     ->select('uni_migrates.id','universities.university_name')
+                    ->where('uni_migrates.id',$id)
                     ->first();
 
         $newUni = DB::table('uni_migrates')
             ->join('universities','uni_migrates.migration_uni','universities.id')
             ->select('uni_migrates.id','universities.university_name')
+            ->where('uni_migrates.id',$id)
             ->first();
 
         return view('admin.result.migration_details',compact('viewStd','viewOld','newUni'));

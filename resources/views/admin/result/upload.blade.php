@@ -61,6 +61,27 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="x_title">
+                    <h2>Result Publish</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="row">
+                        <div class="col-md-1">
+                            @php
+                            $pub = DB::table('result_publishes')->first();
+                            @endphp
+
+                            @if($pub->published==0)
+                                <a class="btn btn-primary" href="{{ url('result/published') }}">Publish Result</a>
+                            @else
+                                <a class="btn btn-warning" href="{{ url('result/published/off') }}">Publish Off</a>
+                            @endif
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
             </div>
         </div>
     </div>

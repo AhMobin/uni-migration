@@ -34,6 +34,17 @@
 
                             </tr>
 
+
+                        @php
+                            $migrate = DB::table('uni_migrates')
+                        ->join('universities','uni_migrates.migration_uni','universities.id')
+                        ->select('uni_migrates.*','universities.university_name')
+                        ->where('uni_migrates.st_roll',Auth::user()->hsc_roll)
+                        ->first();
+
+                        @endphp
+
+                        @if(!$migrate)
                             <tr>
                                 <td><h5>To Migrate</h5></td>
                                 <td>
@@ -52,6 +63,31 @@
                                     <button type="submit" class="btn btn-primary"> <i class="fa fa-thumbs-up"></i> </button>
                                 </td>
                             </tr>
+
+                        @elseif($migrate->status==0)
+                            <tr>
+                                <td><h5>Migration Applied</h5></td>
+                                <td>
+                                    {{ $migrate->university_name }}
+                                </td>
+                            </tr>
+
+                        @elseif($migrate->status==2)
+                            <tr>
+                                <td><h5>University Name<br><span style="color:red">(Migration Denied)</span></h5></td>
+                                <td>
+                                    {{ $migrate->university_name }}
+                                </td>
+                            </tr>
+
+                        @elseif($migrate->status==1)
+                            <tr>
+                                <td><h5>Migration (Granted)</h5></td>
+                                <td>
+                                    {{ $migrate->university_name }}
+                                </td>
+                            </tr>
+                        @endif
 
                     </form>
 

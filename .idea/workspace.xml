@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="242250b5-d079-4688-ba93-77dc2f8287c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/university/edit_uni.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admission/deny.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admission/fail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/UniversityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/UniversityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/University.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/University.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_10_141951_create_universities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_10_141951_create_universities_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/university/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/university/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ApplicantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ApplicantsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultnMigrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ResultnMigrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/applicants/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/applicants/confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/applicants/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/applicants/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/result/upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/result/upload.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admission/apply_migrate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admission/apply_migrate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admission/art_com_migrate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admission/art_com_migrate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admission/under_nine.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admission/under_nine.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +201,11 @@
       <workItem from="1591810459783" duration="277000" />
       <workItem from="1592565179275" duration="10185000" />
       <workItem from="1592679962125" duration="6907000" />
-      <workItem from="1593179181886" duration="2614000" />
+      <workItem from="1593179181886" duration="3267000" />
+      <workItem from="1593263944456" duration="7000" />
+      <workItem from="1593328660511" duration="3000" />
+      <workItem from="1593771822939" duration="3287000" />
+      <workItem from="1593783812787" duration="8311000" />
     </task>
     <servers />
   </component>
@@ -199,10 +213,6 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="363" y="97" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584282892172">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="363" y="97" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738@0.0.1366.738" timestamp="1584282892172" />
     <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592683461796">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -215,5 +225,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="384" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1587073140678" />
+    <state x="339" y="22" width="670" height="676" key="search.everywhere.popup" timestamp="1593787318090">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="22" width="670" height="676" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1593787318090" />
   </component>
 </project>

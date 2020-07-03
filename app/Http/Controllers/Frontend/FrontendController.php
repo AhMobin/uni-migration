@@ -74,12 +74,14 @@ class FrontendController extends Controller
             'hsc_year' => $request->hsc_year,
         ]);
 
+        User::where('id',Auth::id())->update(['hsc_roll'=>$request->hsc_roll]);
+
         $notification = array(
             'messege' => 'Information Inserted Successful',
             'alert-type' => 'success'
         );
 
-        return Redirect()->back()->with($notification);
+        return Redirect()->route('home')->with($notification);
     }
 
 
@@ -103,12 +105,14 @@ class FrontendController extends Controller
 
         Hsc::where('user_id',$id)->update($hsc);
 
+        User::where('id',$id)->update(['hsc_roll'=>$request->hsc_roll]);
+
         $notification = array(
             'messege' => 'Information Update Successful',
             'alert-type' => 'success'
         );
 
-        return Redirect()->back()->with($notification);
+        return Redirect()->route('home')->with($notification);
     }
 
 
@@ -124,9 +128,11 @@ class FrontendController extends Controller
         }elseif($result >= 8 && $result < 9 && $group=='science'){
             $GenSpeAgr = University::select('id','university_name')->where('unicategory_id','>',2)->get();
             return view('admission.below_nine',compact('GenSpeAgr'));
-        }elseif ($result >= 8 && $group=='commerce' || $group=='arts'){
+        }elseif ($result >= 8 && $result <= 7.5 && $group=='commerce' || $group=='arts'){
             $onlyGen = University::select('id','university_name')->where('unicategory_id',4)->get();
             return view('admission.com_art',compact('onlyGen'));
+        }elseif ($result <= 7.5){
+            return view('admission.deny');
         }
     }
 
@@ -167,7 +173,7 @@ class FrontendController extends Controller
             'alert-type' => 'success'
         );
 
-        return Redirect()->back()->with($notification);
+        return Redirect()->route('home')->with($notification);
     }
 
 
@@ -180,30 +186,30 @@ class FrontendController extends Controller
                 ->where('results.user_roll',Auth::user()->hsc_roll)
                 ->first();
 
-        $migrate = DB::table('uni_migrates')
-                    ->join('universities','uni_migrates.migration_uni','universities.id')
-                    ->select('uni_migrates.*','universities.university_name')
-                    ->where('uni_migrates.result_id',$result->id)
-                    ->first();
-
+//        $migrate = DB::table('uni_migrates')
+//            ->join('universities','uni_migrates.migration_uni','universities.id')
+//            ->select('uni_migrates.*','universities.university_name')
+//            ->where('uni_migrates.st_roll',Auth::user()->hsc_roll)
+//            ->first();
+//
         $ssc = Ssc::select('ssc_result')->where('user_id',Auth::id())->first();
         $hsc = Hsc::select('hsc_group','hsc_result')->where('user_id',Auth::id())->first();
 
         $gpa = $ssc->ssc_result + $hsc->hsc_result;
         $group = $hsc->hsc_group;
 
-        if($migrate){
-            if($gpa >= 9 && $group=='science'){
-                $allUni = University::select('id','university_name')->where('status',1)->get();
-                return view('admission.after_migrate',compact('allUni','result','migrate'));
-            }elseif($gpa >= 8 && $gpa < 9 && $group=='science'){
-                $GenSpeAgr = University::select('id','university_name')->where('unicategory_id','>',2)->get();
-                return view('admission.after_migrate_nine',compact('GenSpeAgr','result','migrate'));
-            }elseif ($gpa >= 8 && $group=='commerce' || $group=='arts'){
-                $onlyGen = University::select('id','university_name')->where('unicategory_id',4)->get();
-                return view('admission.after_migrate_artcom',compact('onlyGen','result','migrate'));
-            }
-        }else{
+//        if($migrate){
+//            if($gpa >= 9 && $group=='science'){
+//                $allUni = University::select('id','university_name')->where('status',1)->get();
+//                return view('admission.after_migrate',compact('allUni','result','migrate'));
+//            }elseif($gpa >= 8 && $gpa < 9 && $group=='science'){
+//                $GenSpeAgr = University::select('id','university_name')->where('unicategory_id','>',2)->get();
+//                return view('admission.after_migrate_nine',compact('GenSpeAgr','result','migrate'));
+//            }elseif ($gpa >= 8 && $group=='commerce' || $group=='arts'){
+//                $onlyGen = University::select('id','university_name')->where('unicategory_id',4)->get();
+//                return view('admission.after_migrate_artcom',compact('onlyGen','result','migrate'));
+//            }
+//        }else{
             if($gpa >= 9 && $group=='science'){
                 $allUni = University::select('id','university_name')->where('status',1)->get();
                 return view('admission.apply_migrate',compact('allUni','result'));
@@ -214,7 +220,7 @@ class FrontendController extends Controller
                 $onlyGen = University::select('id','university_name')->where('unicategory_id',4)->get();
                 return view('admission.art_com_migrate',compact('onlyGen','result'));
             }
-        }
+//        }
     }
 
 
@@ -232,6 +238,11 @@ class FrontendController extends Controller
         );
 
         return Redirect()->to('home')->with($notification);
+    }
+
+
+    public function Fail(){
+        return view('admission.fail');
     }
 
 }

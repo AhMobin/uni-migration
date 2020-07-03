@@ -141,6 +141,6 @@
         </div>
     </div>
 
-    <a href="{{ route('admin.dashboard') }}" class="btn btn-primary">Back</a>
+    <a href="{{ route('new.applicant') }}" class="btn btn-primary">Back</a>
 
 @endsection

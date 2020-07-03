@@ -1,8 +1,6 @@
 <?php
 
 
-
-//Route::get('/', function () {return view('welcome');});
 //auth & user
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -49,7 +47,7 @@ Route::get('details/pending/applicant/{id}','Backend\ApplicantsController@Detail
 //Route::get('approve/pending/applicant/{user_id}','Backend\ApplicantsController@SendNotification');
 
 //sending confirm email
-Route::get('approve/pending/applicant/{user_id}','Backend\ApplicantsController@MailSend');
+Route::get('approve/pending/applicant/{id}','Backend\ApplicantsController@MailSend');
 
 
 //upload result
@@ -60,6 +58,9 @@ Route::post('import/result','Backend\ResultController@ImportResult')->name('impo
 Route::get('seat','Backend\ResultnMigrationController@Seat')->name('seat');
 
 Route::get('migration/requests','Backend\ResultnMigrationController@MigrationRequest')->name('migrations');
+
+Route::get('result/published','Backend\ResultController@ResultPublished');
+Route::get('result/published/off','Backend\ResultController@ResultPublishedOff');
 
 
 //migration
@@ -105,3 +106,5 @@ Route::get('show/pdf/{id}','Frontend\PDFController@previewPDF');
 //university Migration
 Route::get('university/migration','Frontend\FrontendController@applyMigration')->name('uni.migrate');
 Route::post('migration/applied/','Frontend\FrontendController@MigratedApplied');
+
+Route::get('admission/test/result','Frontend\FrontendController@Fail')->name('fail');

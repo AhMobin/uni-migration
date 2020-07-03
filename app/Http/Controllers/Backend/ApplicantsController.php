@@ -80,6 +80,6 @@ class ApplicantsController extends Controller
             'alert-type' => 'success'
         );
 
-        return Redirect()->route('')->with($notification);
+        return Redirect()->route('confirmed.applicant')->with($notification);
     }
 }

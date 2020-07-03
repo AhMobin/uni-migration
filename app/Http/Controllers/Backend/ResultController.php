@@ -35,15 +35,44 @@ class ResultController extends Controller
 
 
         $result = (new FastExcel)->import($path, function ($line) {
-            Result::create([
-                'user_roll' => $line['user_roll'],
-                'university_id' => $line['university_id'],
-            ]);
+//            Result::create([
+//                'user_roll' => $line['user_roll'],
+//                'university_id' => $line['university_id'],
+//            ]);
+
+            $data = array();
+            $data['user_roll'] = $line['user_roll'];
+            $data['university_id'] = $line['university_id'];
+
+            DB::table('results')->insert($data);
         });
+
+       // $published = DB::table('result_publishes')->update(['published'=>1]);
+
 
         $notification = array(
             'messege' => 'Result Uploaded Successful',
             'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
+
+
+    public function ResultPublished(){
+        DB::table('result_publishes')->update(['published'=>1]);
+        $notification = array(
+            'messege' => 'Result Published Successful',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
+
+
+    public function ResultPublishedOff(){
+        DB::table('result_publishes')->update(['published'=>0]);
+        $notification = array(
+            'messege' => 'Result Published Temporarily Off',
+            'alert-type' => 'warning'
         );
         return Redirect()->back()->with($notification);
     }

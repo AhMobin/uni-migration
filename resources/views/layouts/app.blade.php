@@ -90,12 +90,17 @@
                                     </ul>
                                 </li>
                             @endif
-                            @if($check)
-                            <li><a><i class="fa fa-table"></i> Migration <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="{{ route('uni.migrate') }}">Uni Migration</a></li>
-                                </ul>
-                            </li>
+
+                            @php
+                                $result_published = DB::table('result_publishes')->where('published',1)->first();
+                                $result = \App\Result::where('user_roll',\Illuminate\Support\Facades\Auth::user()->hsc_roll)->first();
+                            @endphp
+
+                            @if($result_published && $result)
+                                <li><a href="{{ route('uni.migrate') }}"><i class="fa fa-table"></i> Result & Migration</a></li>
+
+                            @elseif($result_published)
+                                <li><a href="{{ route('fail') }}"><i class="fa fa-table"></i> Result</a></li>
                             @endif
                         </ul>
                     </div>
