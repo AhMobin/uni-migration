@@ -41,6 +41,7 @@ Route::post('update/uni/{id}','Backend\UniversityController@UpdateUniversity');
 //student admission applications manage
 Route::get('new/applications/list','Backend\ApplicantsController@NewApplicants')->name('new.applicant');
 Route::get('confirmed/applications/list','Backend\ApplicantsController@ConfirmApplicants')->name('confirmed.applicant');
+Route::get('remove/confirm/applicant/{id}','Backend\ApplicantsController@DeleteConfirmApplicant');
 //details applicant
 Route::get('details/pending/applicant/{id}','Backend\ApplicantsController@DetailsPending');
 //approve pending request

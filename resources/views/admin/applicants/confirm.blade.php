@@ -44,7 +44,7 @@
                                 <th>{{ $app->second_choice }}</th>
                                 <th>{{ $app->third_choice }}</th>
                                 <td>
-                                    <a href="#" class="btn btn-danger" title="Delete" id="delete"><i class="fa fa-trash"></i></a>
+                                    <a href="{{ url('remove/confirm/applicant/'.$app->id) }}" class="btn btn-danger" title="Delete" id="delete"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach

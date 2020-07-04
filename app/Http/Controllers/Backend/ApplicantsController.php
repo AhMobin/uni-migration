@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Admission;
 use App\Http\Controllers\Controller;
 use App\Mail\ConfirmationMail;
 use App\Notifications\NotifyConfirmation;
@@ -38,8 +39,17 @@ class ApplicantsController extends Controller
             ->where('admissions.status',1)
             ->get();
 
-
         return view('admin.applicants.confirm',compact('confirm'));
+    }
+
+    public function DeleteConfirmApplicant($id){
+        $delete = Admission::where('id',$id)->delete();
+        $notification = array(
+            'messege' => 'Applicant Remove',
+            'alert-type' => 'warning'
+        );
+
+        return Redirect()->back()->with($notification);
     }
 
     public function DetailsPending($id){
