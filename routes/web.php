@@ -44,9 +44,6 @@ Route::get('confirmed/applications/list','Backend\ApplicantsController@ConfirmAp
 Route::get('remove/confirm/applicant/{id}','Backend\ApplicantsController@DeleteConfirmApplicant');
 //details applicant
 Route::get('details/pending/applicant/{id}','Backend\ApplicantsController@DetailsPending');
-//approve pending request
-//Route::get('approve/pending/applicant/{user_id}','Backend\ApplicantsController@SendNotification');
-
 //sending confirm email
 Route::get('approve/pending/applicant/{id}','Backend\ApplicantsController@MailSend');
 

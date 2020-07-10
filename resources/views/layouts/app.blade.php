@@ -97,7 +97,7 @@
                             @endphp
 
                             @if($result_published && $result)
-                                <li><a href="{{ route('uni.migrate') }}"><i class="fa fa-table"></i> Result & Migration</a></li>
+                                <li><a href="{{ route('uni.migrate') }}"><i class="fa fa-table"></i> Result</a></li>
 
                             @elseif($result_published)
                                 <li><a href="{{ route('fail') }}"><i class="fa fa-table"></i> Result</a></li>
