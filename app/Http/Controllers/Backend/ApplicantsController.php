@@ -83,7 +83,7 @@ class ApplicantsController extends Controller
         $user = DB::table('users')->where('id',$id)->first();
         Mail::to($user->email_address)->send(new ConfirmationMail());
 
-        $approve = DB::table('admissions')->update(['status'=>1]);
+        $approve = DB::table('admissions')->where('user_id',$id)->update(['status'=>1]);
 
         $notification = array(
             'messege' => 'Applicant Confirmed! Student Has Been Notified',

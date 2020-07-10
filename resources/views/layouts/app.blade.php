@@ -177,7 +177,7 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Copyright &copy; <a href="#">EU</a>
+                Copyright &copy; <a href="#">AHM</a>
             </div>
             <div class="clearfix"></div>
         </footer>

@@ -128,11 +128,13 @@ class FrontendController extends Controller
         }elseif($result >= 8 && $result < 9 && $group=='science'){
             $GenSpeAgr = University::select('id','university_name')->where('unicategory_id','>',2)->get();
             return view('admission.below_nine',compact('GenSpeAgr'));
-        }elseif ($result >= 8 && $result <= 7.5 && $group=='commerce' || $group=='arts'){
+        }elseif ($result >= 8 && $result <= 10 && ($group=='commerce' || $group=='arts')){
             $onlyGen = University::select('id','university_name')->where('unicategory_id',4)->get();
             return view('admission.com_art',compact('onlyGen'));
-        }elseif ($result <= 7.5){
+        }elseif ($result <= 8){
             return view('admission.deny');
+        }elseif ($result > 10){
+            return view('admission.error');
         }
     }
 
