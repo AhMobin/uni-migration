@@ -32,7 +32,7 @@
             <section class="login_content">
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
-                    <h1>Administrative Login</h1>
+                    <h1>Student Login</h1>
                     <div>
                         <input type="email" name="email_address" class="form-control @error('email_address') is-invalid @enderror" placeholder="Admin Email Address"value="{{ old('email_address') }}" required autocomplete="email_address">
                         @error('email_address')
@@ -55,6 +55,7 @@
                             <a class="reset_pass" href="{{ route('password.request') }}">Lost your password?</a>
                         @endif
                     </div>
+                    Don't Have Account <a href="{{ route('register') }}">Sign Up</a> Now
 
                     <div class="clearfix"></div>
 
