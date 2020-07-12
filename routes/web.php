@@ -1,6 +1,5 @@
 <?php
 
-
 //auth & user
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -47,7 +46,6 @@ Route::get('details/pending/applicant/{id}','Backend\ApplicantsController@Detail
 //sending confirm email
 Route::get('approve/pending/applicant/{id}','Backend\ApplicantsController@MailSend');
 
-
 //upload result
 Route::get('upload/students/result','Backend\ResultController@showForm')->name('upload.result');
 Route::post('import/result','Backend\ResultController@ImportResult')->name('import.result');
@@ -60,7 +58,6 @@ Route::get('migration/requests','Backend\ResultnMigrationController@MigrationReq
 Route::get('result/published','Backend\ResultController@ResultPublished');
 Route::get('result/published/off','Backend\ResultController@ResultPublishedOff');
 
-
 //migration
 //view single students migration details
 Route::get('view/migration/info/{id}','Backend\ResultnMigrationController@MigrationDetails');
@@ -68,16 +65,6 @@ Route::get('view/migration/info/{id}','Backend\ResultnMigrationController@Migrat
 Route::get('migration/approved/{id}','Backend\ResultnMigrationController@MigrationApproved');
 //deny migration
 Route::get('migration/deny/{id}','Backend\ResultnMigrationController@MigrationDenied');
-
-
-/*******
- * Frontend Routes
- * **************************
- *************************************/
-
-Route::get('/','Frontend\PageController@Index')->name('page.index');
-
-
 
 /*******
  * Student Routes
@@ -106,3 +93,10 @@ Route::get('university/migration','Frontend\FrontendController@applyMigration')-
 Route::post('migration/applied/','Frontend\FrontendController@MigratedApplied');
 
 Route::get('admission/test/result','Frontend\FrontendController@Fail')->name('fail');
+
+
+/*******
+ * Frontend Routes
+ * **************************
+ *************************************/
+Route::get('/','Frontend\PageController@Index')->name('page.index');
